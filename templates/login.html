@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% with errors = get_flashed_messages() %}
+        {% if errors %}
+            {% for error in errors %}
+                <h4>Error! {{error}}</h4>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="/login">
+        username - <input type="text" name="username">
+        Password - <input type="password" name="password">
+        <button type="submit">Log in</button>
+    </form>
+</body>
+</html>
